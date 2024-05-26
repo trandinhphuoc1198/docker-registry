@@ -1,4 +1,5 @@
-#SERVER SIDE
+# SERVER SIDE
+
 0. Install Mkcert. Just curl and install binary. See [project][mkcert] for more instruction
 
 1. Create CA
@@ -18,7 +19,9 @@
     ```bash
     mkcert -cert-file certs/registry.crt -key-file certs/registry.key localhost 192.168.1.1 tkg-bootstrap-registry.local
     ```
-#CLIENT SIDE
+    
+# CLIENT SIDE
+
 1. Copy CA cert to docker folder
     ```
     cp ca.crt /etc/docker/certs.d/<my-registry.example.com:5000>/ca.crt
