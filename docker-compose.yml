@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  registry:
+    image: registry
+    container_name: registry
+    restart: always
+    ports:
+      - 5001:5001
+      - 5000:5000
+    volumes:
+      - ./data:/var/lib/registry
+      - ./certs:/certs
+    environment:
+      - REGISTRY_HTTP_ADDR=0.0.0.0:5001
+      - REGISTRY_HTTP_TLS_CERTIFICATE=/certs/registry.crt
+      - REGISTRY_HTTP_TLS_KEY=/certs/registry.key
+
